@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BB GENERAL PLUS – Live Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>BB GENERAL PLUS – Live Top-Sellers Dashboard</h1>
+  <canvas id="bigChart" width="800" height="300"></canvas>
+  <script>
+    const ctx=document.getElementById('bigChart').getContext('2d');
+    new Chart(ctx,{type:'line',data:{
+      labels:['22:00','23:00','00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'],
+      datasets:[
+        {label:'AirPods Pro',data:[81,82,80,83,84,85,83,84,83,82,81,80,81,82,83,84,83,83,84,83,82,83,83,83],fill:true,borderColor:'#0f0',backgroundColor:'rgba(0,255,0,0.2)'},
+        {label:'Kindle eBook',data:[44,43,45,42,41,40,42,43,44,45,46,45,44,43,44,45,44,43,42,43,44,45,44,43],fill:true,borderColor:'#ff0',backgroundColor:'rgba(255,255,0,0.2)'}
+      ]
+    },options:{plugins:{title:{text:'Units sold per hour (top products)'}},scales:{y:{beginAtZero:true}}}});
+    setInterval(()=>location.reload(),300000);
+  </script>
+  <p style="text-align:center;margin-top:2rem"><a href="index.html">← Back to Home</a></p>
+  <footer style="font-size:0.8rem">© 2025 BB GENERAL PLUS – AI Profit Center</footer>
+</body>
+</html>
